@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{077EAD3B-238B-482A-9C31-C34326A34814}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E8B97B79-9746-4809-BD83-88D0E4E46467}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LinqRb", "src\LinqRb\LinqRb.xproj", "{1538FF9B-DE9C-4EA5-95A5-912F016A04DA}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LinqRb.UnitTests", "src\LinqRb.UnitTests\LinqRb.UnitTests.xproj", "{AC5573FD-73C9-47CD-94B8-59B562BC3E54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1538FF9B-DE9C-4EA5-95A5-912F016A04DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1538FF9B-DE9C-4EA5-95A5-912F016A04DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1538FF9B-DE9C-4EA5-95A5-912F016A04DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1538FF9B-DE9C-4EA5-95A5-912F016A04DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5573FD-73C9-47CD-94B8-59B562BC3E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5573FD-73C9-47CD-94B8-59B562BC3E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5573FD-73C9-47CD-94B8-59B562BC3E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5573FD-73C9-47CD-94B8-59B562BC3E54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1538FF9B-DE9C-4EA5-95A5-912F016A04DA} = {077EAD3B-238B-482A-9C31-C34326A34814}
+		{AC5573FD-73C9-47CD-94B8-59B562BC3E54} = {077EAD3B-238B-482A-9C31-C34326A34814}
+	EndGlobalSection
+EndGlobal
