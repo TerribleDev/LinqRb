@@ -1,5 +1,11 @@
 This adds some extra linq extensions I have found in the ruby community. Ruby dev's will recognize these from the ruby array api docs. If you are still confused with these explanations check out the docs of the ruby version(s)
 
+## How to use?
+
+Simply install the [nuget package](https://www.nuget.org/packages/LinqRb/) 
+
+`Install-Package LinqRb`
+
 
 ## Reject
 
