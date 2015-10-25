@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.1-*",
+  "version": "1.0.1-beta1",
   "description": "Add additional Linq extensions familiar to ruby ppl",
   "authors": [ "Tommy Parnell" ],
   "tags": [ "Linq" ],
@@ -7,19 +7,6 @@
   "licenseUrl": "",
 
   "frameworks": {
-    "dnx451": { },
-    "dnx452": { },
-    "dnx45": { },
-    "dnx46": { },
-    "dnx40": { },
-    "dnxcore50": {
-      "dependencies": {
-        "System.Collections": "4.0.11-beta-*",
-        "System.Linq": "4.0.1-beta-*",
-        "System.Runtime": "4.0.21-beta-*",
-        "System.Threading": "4.0.11-beta-*"
-      }
-    },
     "dotnet": {
       "dependencies": {
         "System.Collections": "4.0.11-beta-*",
