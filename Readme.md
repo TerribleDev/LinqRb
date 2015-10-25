@@ -6,6 +6,8 @@ Simply install the [nuget package](https://www.nuget.org/packages/LinqRb/)
 
 `Install-Package LinqRb`
 
+The linq extensions use the `System.Linq` namespace like everything in dotnet land so you should basically have them if you add a using of that namespace.
+
 
 ## Reject
 
