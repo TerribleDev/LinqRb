@@ -21,4 +21,4 @@ artifacts:
  - path: artifacts\bin\LinqRb\Release\*.nupkg
 
 test_script:
- - dnx -p src\LinqRb.UnitTests\project.json
+ - dnx -p src\LinqRb.UnitTests\project.json test
