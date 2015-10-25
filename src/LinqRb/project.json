@@ -1,9 +1,9 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.1-*",
   "description": "Add additional Linq extensions familiar to ruby ppl",
   "authors": [ "Tommy Parnell" ],
   "tags": [ "Linq" ],
-  "projectUrl": "",
+  "projectUrl": "https://github.com/tparnell8/LinqRb",
   "licenseUrl": "",
 
   "frameworks": {

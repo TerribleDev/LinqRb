@@ -3,7 +3,7 @@
   "description": "LinqRb.UnitTests Class Library",
   "authors": [ "parne" ],
   "tags": [ "" ],
-  "projectUrl": "",
+  "projectUrl": "https://github.com/tparnell8/LinqRb",
   "licenseUrl": "",
   "dependencies": {
     "xunit": "2.1.0",
