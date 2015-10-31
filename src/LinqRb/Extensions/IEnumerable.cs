@@ -18,7 +18,25 @@ namespace System.Linq
 				if(!predicate(element)) yield return element;
 			}
 		}
-
+		
+		/// <summary>
+		/// Break a list of items into chunks of a specific size
+		/// </summary>
+		public static IEnumerable<IEnumerable<T>> Chunk<T>(this IEnumerable<T> source, int chunksize)
+		{
+			var enumerator = source.GetEnumerator();
+			var arr = new List<T>(chunksize);
+			while (enumerator.MoveNext())
+			{
+				arr.Add(enumerator.Current);
+				if(arr.Count >= chunksize)
+				{
+					yield return arr;
+					arr = new List<T>(chunksize);
+				}
+			}
+		}
+		
 		/// <summary>
 		/// Returns the first array that contains the object
 		/// </summary>
