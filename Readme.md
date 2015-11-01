@@ -27,6 +27,12 @@ Cycle will run an action for every element in an IEnumerable. This will run fore
 
 this will print `1,2,3,4,1,2,3,4`
 
+## Chunk
+
+Chunk will take the current array and make child arrays, setting the size of the child array to be the specified chunk size
+
+`new List<int>() { 1,2,3,4,5,6}.Chunk(2))` => `[[1,2], [3,4] [5,6]]` 
+
 ## ForEach
 
 I hope I dont have to explain this one. `ListOfThings.ForEach(a=>a.DoSomething())`
