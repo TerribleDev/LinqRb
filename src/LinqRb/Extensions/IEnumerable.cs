@@ -13,9 +13,9 @@ namespace System.Linq
         /// <returns></returns>
         public static IEnumerable<T> Reject<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
-            foreach (T element in source)
+            foreach(T element in source)
             {
-                if (!predicate(element)) yield return element;
+                if(!predicate(element)) yield return element;
             }
         }
 
@@ -28,10 +28,10 @@ namespace System.Linq
         {
             var enumerator = source.GetEnumerator();
             var arr = new List<T>(chunkSize);
-            while (enumerator.MoveNext())
+            while(enumerator.MoveNext())
             {
                 arr.Add(enumerator.Current);
-                if (arr.Count >= chunkSize)
+                if(arr.Count >= chunkSize)
                 {
                     yield return arr;
                     arr = new List<T>(chunkSize);
@@ -50,12 +50,12 @@ namespace System.Linq
         public static IEnumerable<T> AssocFirstOrDefault<T>(this IEnumerable<IEnumerable<T>> source, T obj)
         {
             var outer = source.GetEnumerator();
-            while (outer.MoveNext())
+            while(outer.MoveNext())
             {
                 var inner = outer.Current.GetEnumerator();
-                while (inner.MoveNext())
+                while(inner.MoveNext())
                 {
-                    if (inner.Current.Equals(obj))
+                    if(inner.Current.Equals(obj))
                     {
                         return outer.Current;
                     }
@@ -73,9 +73,9 @@ namespace System.Linq
         public static IEnumerable<T> Compact<T>(this IEnumerable<T> source)
             where T : class
         {
-            foreach (var item in source)
+            foreach(var item in source)
             {
-                if (item != null)
+                if(item != null)
                 {
                     yield return item;
                 }
@@ -91,7 +91,7 @@ namespace System.Linq
         /// <param name="times">Times we should enumerate over the array</param>
         public static void Cycle<T>(this IEnumerable<T> source, Action<T> action, int times)
         {
-            for (int i = 0; i < times; i++)
+            for(int i = 0; i < times; i++)
             {
                 Enumerate(source, action);
             }
@@ -105,24 +105,25 @@ namespace System.Linq
         /// <param name="action"></param>
         public static void Cycle<T>(this IEnumerable<T> source, Action<T> action)
         {
-            while (true)
+            while(true)
             {
                 Enumerate(source, action);
             }
         }
 
-        public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
-            Enumerate(source, action);
+            return Enumerate(source, action);
         }
 
-        public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
         {
             var index = 0;
             var enumerator = source.GetEnumerator();
-            while (enumerator.MoveNext())
+            while(enumerator.MoveNext())
             {
                 action?.Invoke(enumerator.Current, index);
+                yield return enumerator.Current;
                 index++;
             }
         }
@@ -130,10 +131,10 @@ namespace System.Linq
         public static IEnumerable<T> Distinct<T>(this IEnumerable<T> source, Func<T, object> comparer)
         {
             var items = new HashSet<object>();
-            foreach (var item in source)
+            foreach(var item in source)
             {
                 var comparedItem = comparer?.Invoke(item);
-                if (!items.Contains(comparedItem))
+                if(!items.Contains(comparedItem))
                 {
                     items.Add(comparedItem);
                     yield return item;
@@ -141,12 +142,13 @@ namespace System.Linq
             }
         }
 
-        private static void Enumerate<T>(IEnumerable<T> source, Action<T> action)
+        private static IEnumerable<T> Enumerate<T>(IEnumerable<T> source, Action<T> action)
         {
             var enumerator = source.GetEnumerator();
-            while (enumerator.MoveNext())
+            while(enumerator.MoveNext())
             {
                 action?.Invoke(enumerator.Current);
+                yield return enumerator.Current;
             }
         }
     }
